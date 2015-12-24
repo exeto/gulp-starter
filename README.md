@@ -1,4 +1,4 @@
-# gbp [![Dependency Status][depstat-image]][depstat-url]
+# gbp [![devDependency Status][depstat-image]][depstat-url]
 
 Gulp boilerplate.
 
@@ -23,5 +23,5 @@ $ npm run build
 
 [MIT](LICENSE.md) © [Timofey Dergachev](http://exeto.me/)
 
-[depstat-url]: https://gemnasium.com/exeto/gbp
-[depstat-image]: https://img.shields.io/gemnasium/exeto/gbp.svg?style=flat
+[depstat-url]: https://david-dm.org/exeto/gbp#info=devDependencies
+[depstat-image]: https://david-dm.org/exeto/gbp/dev-status.svg
