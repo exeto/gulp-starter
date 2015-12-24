@@ -1,0 +1,19 @@
+# OSX
+.Trashes
+.Spotlight-V100
+.DS_Store
+._*
+
+# NODEJS
+node_modules
+npm-debug.log
+
+# OTHER
+public
+source/img/sprite-svg.png
+source/img/sprite-svg.svg
+source/img/sprite.png
+source/img/sprite@2x.png
+source/scss/_sprite-svg.scss
+source/scss/_sprite.scss
+source/js/vendor/modernizr.js

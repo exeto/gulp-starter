@@ -1,0 +1,32 @@
+@function px-to-em($value) {
+  @if $value == 0 {
+    @return 0
+  }
+
+  @return ($value/10) * 1em
+}
+
+.svg-icon {
+  font-size: 10px;
+  display: inline-block;
+  background-image: url('../img/sprite-svg.svg');
+  background-repeat: no-repeat;
+  background-size: px-to-em({{spriteWidth}}) px-to-em({{spriteHeight}});
+
+  .m-no-svg &,
+  .m-no-js & {
+    background-image: url('../img/sprite-svg.png');
+  }
+}
+
+doesnotexist:-o-prefocus, .svg-icon {
+  background-image: url('../img/sprite-svg.png');
+}
+
+{{#shapes}}
+{{#selector.shape}}.{{expression}}{{/selector.shape}} {
+  background-position: px-to-em({{position.absolute.x}}) px-to-em({{position.absolute.y}});
+  width: px-to-em({{width.outer}});
+  height: px-to-em({{height.outer}});
+}
+{{/shapes}}

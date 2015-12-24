@@ -1,0 +1,59 @@
+{
+  "name": "gbp",
+  "version": "0.1.0",
+  "description": "Gulp boilerplate",
+  "license": "MIT",
+  "repository": "exeto/gbp",
+  "author": {
+    "name": "Timofey Dergachev",
+    "email": "t@exeto.me",
+    "url": "exeto.me"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "NODE_ENV=production gulp build"
+  },
+  "keywords": [
+    "gulp",
+    "boilerplate"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^6.2.1",
+    "babel-core": "^6.3.26",
+    "babel-eslint": "^4.1.6",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-runtime": "^6.3.19",
+    "browser-sync": "^2.10.1",
+    "config": "^1.17.1",
+    "cssnano": "^3.4.0",
+    "del": "^2.2.0",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^2.1.1",
+    "gulp": "^3.9.0",
+    "gulp-changed": "^1.3.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-filter": "^3.0.1",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-postcss": "^6.0.1",
+    "gulp-posthtml": "^1.5.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svg-sprite": "^1.2.17",
+    "gulp-svg2png": "^1.0.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp.spritesmith": "^6.0.0",
+    "mkdirp": "^0.5.1",
+    "modernizr": "^3.2.0",
+    "node-notifier": "^4.4.0",
+    "posthtml-bem": "^0.2.2",
+    "posthtml-include": "^1.0.1",
+    "precss": "^1.3.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5",
+    "webpack": "^1.12.9"
+  }
+}
