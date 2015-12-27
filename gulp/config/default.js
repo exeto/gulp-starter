@@ -8,7 +8,7 @@ module.exports = {
     dest: 'public',
     sprite: 'source/img/sprite/**/*.png',
     spriteSVG: 'source/img/sprite-svg/**/*.svg',
-    html: 'source/**/*.html',
+    html: ['!source/html/**', 'source/**/*.html'],
     modernizr: 'public/js/modernizr.js',
     csscomb: 'source/scss',
     img: {
@@ -31,8 +31,8 @@ module.exports = {
     '!source/js{,/**/*}',
     '!source/img/sprite{,/**/*}',
     '!source/img/sprite-svg{,/**/*}',
+    '!source/html{,/**/*}',
     '!source/**/*.html',
-    '!source/html',
     '!source/.eslintrc',
     'source/**/*',
   ],
