@@ -6,8 +6,7 @@ const runSequence = require('run-sequence');
 gulp.task('build', done => {
   runSequence(
     'clean',
-    ['sprite', 'sprite:svg', 'modernizr', 'html'],
-    ['sass', 'webpack', 'eslint', 'copy'],
-    'img', done
+    ['sprite', 'sprite:svg', 'modernizr', 'html', 'img'],
+    ['sass', 'webpack', 'eslint', 'copy'], done
   );
 });

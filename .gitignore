@@ -10,10 +10,5 @@ npm-debug.log
 
 # OTHER
 public
-source/img/sprite-svg.png
-source/img/sprite-svg.svg
-source/img/sprite.png
-source/img/sprite@2x.png
-source/scss/_sprite-svg.scss
-source/scss/_sprite.scss
-source/js/vendor/modernizr.js
+source/static/scss/_sprite-svg.scss
+source/static/scss/_sprite.scss

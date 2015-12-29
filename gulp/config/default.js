@@ -3,52 +3,45 @@
 module.exports = {
   env: process.env.NODE_ENV || 'development',
   production: process.env.NODE_ENV === 'production',
+
   path: {
     src: 'source',
     dest: 'public',
-    sprite: 'source/img/sprite/**/*.png',
-    spriteSVG: 'source/img/sprite-svg/**/*.svg',
-    html: ['!source/html/**', 'source/**/*.html'],
-    modernizr: 'public/js/modernizr.js',
-    csscomb: 'source/scss',
+    sprite: 'source/static/img/sprite/**/*.png',
+    spriteSVG: 'source/static/img/sprite-svg/**/*.svg',
+    html: ['!source/pages/templates/**', 'source/pages/**/*.html'],
+    modernizr: 'public/static/js/modernizr.js',
+    csscomb: 'source/static/scss',
     img: {
-      src: 'public/img/**/*.{png,jpg,JPG,JPEG,jpeg,gif,svg}',
-      dest: 'public/img',
+      src: [
+        '!source/static/img/sprite/**',
+        '!source/static/img/sprite-svg/**',
+        'source/static/img/**/*.{png,jpg,JPG,JPEG,jpeg,gif,svg}',
+      ],
+      dest: 'public/static/img',
     },
     js: {
-      src: '/source/js',
-      dest: '/public/js',
-      watch: 'source/js/**/*.js',
+      src: '/source/static/js',
+      dest: '/public/static/js',
+      watch: 'source/static/js/**/*.js',
     },
     scss: {
-      src: 'source/scss/**/*.scss',
-      dest: 'public/css',
+      src: 'source/static/scss/**/*.scss',
+      dest: 'public/static/css',
     },
   },
 
   copy: [
-    '!source/scss{,/**/*}',
-    '!source/js{,/**/*}',
-    '!source/img/sprite{,/**/*}',
-    '!source/img/sprite-svg{,/**/*}',
-    '!source/html{,/**/*}',
-    '!source/**/*.html',
-    '!source/.eslintrc',
-    'source/**/*',
+    'source/static/misc/**/*',
   ],
 
   clean: [
     'public',
-    'source/scss/_sprite.scss',
-    'source/scss/_sprite-svg.scss',
-    'source/img/sprite.png',
-    'source/img/sprite@2x.png',
-    'source/img/sprite-svg.svg',
-    'source/img/sprite-svg.png',
-    '.sass-cache',
+    'source/static/scss/_sprite.scss',
+    'source/static/scss/_sprite-svg.scss',
   ],
 
-  eslint: '--ext .js,.jsx ./source/js',
+  eslint: '--ext .js,.jsx ./source/static/js',
   imagemin: { progressive: true },
   sass: { outputStyle: 'expanded' },
 
@@ -62,13 +55,13 @@ module.exports = {
       css: {
         dest: '.',
         prefix: 'svg-icon--%s',
-        sprite: 'img/sprite-svg.svg',
+        sprite: 'public/static/img/sprite-svg.svg',
         bust: false,
         layout: 'horizontal',
         render: {
           scss: {
             template: 'gulp/templates/sprite-svg-template.scss',
-            dest: 'scss/_sprite-svg.scss',
+            dest: 'source/static/scss/_sprite-svg.scss',
           },
         },
       },
@@ -76,10 +69,12 @@ module.exports = {
   },
 
   spritesmith: {
-    retinaSrcFilter: 'source/img/sprite/*@2x.png',
-    imgName: 'img/sprite.png',
-    retinaImgName: 'img/sprite@2x.png',
-    cssName: 'scss/_sprite.scss',
+    retinaSrcFilter: 'source/static/img/sprite/**/*@2x.png',
+    retinaImgName: 'sprite@2x.png',
+    retinaImgPath: '../img/sprite@2x.png',
+    imgName: 'sprite.png',
+    imgPath: '../img/sprite.png',
+    cssName: '_sprite.scss',
     cssTemplate: 'gulp/templates/sprite-template.scss',
     padding: 1,
   },
@@ -108,6 +103,6 @@ module.exports = {
   },
 
   include: {
-    root: 'source/html',
+    root: 'source/pages/templates',
   },
 };
