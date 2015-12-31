@@ -37,7 +37,7 @@ module.exports = {
   },
 
   copy: [
-    'source/static/misc/**/*',
+    'source/misc/**/*',
   ],
 
   clean: [
