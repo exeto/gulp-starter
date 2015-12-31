@@ -12,5 +12,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit.
 
-[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.1.1...HEAD
-[0.1.1]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.1.0...v0.2.1
+[Unreleased]: https://github.com/exeto/gbp/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/exeto/gbp/compare/v0.1.0...v0.1.1

@@ -10,7 +10,7 @@ module.exports = {
     sprite: 'source/static/img/sprite/**/*.png',
     spriteSVG: 'source/static/img/sprite-svg/**/*.svg',
     html: ['!source/pages/templates/**', 'source/pages/**/*.html'],
-    modernizr: 'public/static/js/modernizr.js',
+    modernizr: 'source/static/js/head/modernizr.js',
     csscomb: 'source/static/scss',
     img: {
       src: [
@@ -24,6 +24,11 @@ module.exports = {
       src: '/source/static/js',
       dest: '/public/static/js',
       watch: 'source/static/js/**/*.js',
+    },
+    headjs: {
+      src: 'source/static/js/head',
+      dest: 'public/static/js',
+      filename: 'head.js',
     },
     scss: {
       src: 'source/static/scss/**/*.scss',
@@ -39,34 +44,13 @@ module.exports = {
     'public',
     'source/static/scss/_sprite.scss',
     'source/static/scss/_sprite-svg.scss',
+    'source/static/js/head',
   ],
 
   eslint: '--ext .js,.jsx ./source/static/js',
   imagemin: { progressive: true },
   sass: { outputStyle: 'expanded' },
-
-  svg: {
-    shape: {
-      'spacing': {
-        'padding': 2,
-      },
-    },
-    mode: {
-      css: {
-        dest: '.',
-        prefix: 'svg-icon--%s',
-        sprite: 'public/static/img/sprite-svg.svg',
-        bust: false,
-        layout: 'horizontal',
-        render: {
-          scss: {
-            template: 'gulp/templates/sprite-svg-template.scss',
-            dest: 'source/static/scss/_sprite-svg.scss',
-          },
-        },
-      },
-    },
-  },
+  svgstore: { inlineSvg: true },
 
   spritesmith: {
     retinaSrcFilter: 'source/static/img/sprite/**/*@2x.png',

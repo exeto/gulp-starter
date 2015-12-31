@@ -1,11 +1,19 @@
 @import 'sprite';
-@import 'sprite-svg';
 
-body {
-  padding: 10px;
+.preview-body {
+  padding: 50px 20px 20px;
   color: #444;
+  text-align: center;
 }
 
-span {
-  vertical-align: middle;
+.preview-svg-icon {
+  width: 50px;
+  height: 50px;
+  fill: #444;
+  transition: all 0.2s;
+
+  &:hover {
+    fill: #666;
+    transform: scale(1.2);
+  }
 }
