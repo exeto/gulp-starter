@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="m-no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ local.title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="static/css/main.css">
+    <script src="static/js/head.js"></script>
+  </head>
+  <body class="preview-body">
+    <!-- SVG sprite include -->
+    <div class="svg-placeholder"
+      style="border: 0; clip: rect(0 0 0 0); height: 1px;
+        margin: -1px; overflow: hidden; padding: 0;
+        position: absolute; width: 1px;"></div>
+    <script>
+      document.querySelector('.svg-placeholder').innerHTML = SVG_SPRITE;
+    </script>
+    <!-- end SVG sprite include -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="preview-svg-icon">
+      <use xlink:href="#html"></use>
+    </svg>
+
+    {% block hello %}{% endblock %}
+
+    <script src="static/js/main.js"></script>
+  </body>
+</html>

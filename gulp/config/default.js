@@ -9,7 +9,6 @@ module.exports = {
     dest: 'public',
     sprite: 'source/static/img/sprite/**/*.png',
     spriteSVG: 'source/static/img/sprite-svg/**/*.svg',
-    html: ['!source/pages/templates/**', 'source/pages/**/*.html'],
     modernizr: 'source/static/js/head/modernizr.js',
     csscomb: 'source/static/scss',
     img: {
@@ -34,6 +33,15 @@ module.exports = {
       src: 'source/static/scss/**/*.scss',
       dest: 'public/static/css',
     },
+  },
+
+  html: {
+    src: 'pages',
+    dest: './',
+    dataFolder: 'data',
+    dataGlobalFile: 'global.json',
+    excludeFolders: ['data', 'templates'],
+    htmlmin: { collapseWhitespace: true },
   },
 
   copy: [
