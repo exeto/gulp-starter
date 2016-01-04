@@ -1,15 +1,21 @@
 'use strict';
 
+const path    = require('path');
 const webpack = require('webpack');
 const cfg     = require('config');
 
+const paths = {
+  context: path.join(__dirname, cfg.root.src, cfg.static.src, cfg.js.src),
+  dest: path.join(__dirname, cfg.root.dest, cfg.static.dest, cfg.js.dest),
+};
+
 module.exports = {
-  context: __dirname + cfg.path.js.src,
+  context: paths.context,
 
   entry: './main.js',
 
   output: {
-    path: __dirname + cfg.path.js.dest,
+    path: paths.dest,
     filename: 'main.js',
   },
 
@@ -28,7 +34,7 @@ module.exports = {
     ],
   },
 
-  devtool: cfg.production ? null : 'eval',
+  devtool: cfg.js.sourcemaps ? cfg.js.sourcemapsType : null,
 
   plugins: [
     new webpack.NoErrorsPlugin(),
@@ -36,6 +42,6 @@ module.exports = {
   ],
 };
 
-if (cfg.production) {
+if (cfg.js.minify) {
   module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin());
 }

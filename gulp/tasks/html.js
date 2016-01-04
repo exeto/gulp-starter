@@ -19,14 +19,14 @@ const readFile     = pify(fs.readFile);
 
 const paths = {
   src: [
-    path.join(cfg.path.src, cfg.html.src, '/**/*.html'),
-    path.join(`!${cfg.path.src}`, cfg.html.src,
+    path.join(cfg.root.src, cfg.html.src, '/**/*.html'),
+    path.join(`!${cfg.root.src}`, cfg.html.src,
       `{${cfg.html.excludeFolders.join(',')}}`, '/**'),
   ],
-  dest: path.join(cfg.path.dest, cfg.html.dest),
-  htmlFolder: path.join(cfg.path.src, cfg.html.src),
-  dataFolder: path.join(cfg.path.src, cfg.html.src, cfg.html.dataFolder),
-  dataGlobalFile: path.join(cfg.path.src, cfg.html.src, cfg.html.dataFolder,
+  dest: path.join(cfg.root.dest, cfg.html.dest),
+  htmlFolder: path.join(cfg.root.src, cfg.html.src),
+  dataFolder: path.join(cfg.root.src, cfg.html.src, cfg.html.dataFolder),
+  dataGlobalFile: path.join(cfg.root.src, cfg.html.src, cfg.html.dataFolder,
     cfg.html.dataGlobalFile),
 };
 
@@ -61,8 +61,8 @@ gulp.task('html', () => {
     .pipe(_if(!cfg.production, plumber(handleErrors)))
     .pipe(data(getData))
     .pipe(render())
-    .pipe(posthtml(bem(cfg.bem)))
-    .pipe(_if(cfg.production, htmlmin(cfg.html.htmlmin)))
-    .pipe(gulp.dest(cfg.path.dest))
+    .pipe(posthtml(bem(cfg.html.bem)))
+    .pipe(_if(cfg.html.minify, htmlmin(cfg.html.htmlmin)))
+    .pipe(gulp.dest(cfg.root.dest))
     .pipe(bs.stream());
 });
