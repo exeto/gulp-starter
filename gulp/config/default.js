@@ -42,6 +42,8 @@ module.exports = {
     minify: false,
     htmlmin: {
       collapseWhitespace: true,
+      minifyCSS: true,
+      removeComments: true,
     },
     bem: {
       elemPrefix: '__',
@@ -96,9 +98,7 @@ module.exports = {
         'html5shiv',
         'setClasses',
       ],
-      'feature-detects': [
-        'test/svg',
-      ],
+      'feature-detects': [],
     },
   },
 
