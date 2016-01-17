@@ -34,6 +34,10 @@ module.exports = {
     ],
   },
 
+  externals: {
+    modernizr: 'Modernizr',
+  },
+
   devtool: cfg.js.sourcemaps ? cfg.js.sourcemapsType : null,
 
   plugins: [

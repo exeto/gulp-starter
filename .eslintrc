@@ -11,8 +11,5 @@
     "no-param-reassign": 0,
     "no-multi-spaces": [2, { "exceptions": { "VariableDeclarator": true } }],
     "no-shadow": [2, { "allow": ["err", "resolve", "reject", "done", "cb"] }]
-  },
-  "globals": {
-    "Modernizr": false
   }
 }
