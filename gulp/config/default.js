@@ -14,7 +14,7 @@ module.exports = {
   },
 
   copy: [
-    'misc',
+    'to-root',
   ],
 
   img: {
