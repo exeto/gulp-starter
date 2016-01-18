@@ -42,10 +42,23 @@ module.exports = {
 
   plugins: [
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
   ],
 };
 
 if (cfg.js.minify) {
-  module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin());
+  module.exports.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+      comments: false,
+    })
+  );
+}
+
+if (cfg.production) {
+  module.exports.plugins.push(
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin()
+  );
 }
