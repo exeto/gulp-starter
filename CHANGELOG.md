@@ -4,6 +4,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2016-01-19
+### Changed
+- Change `404.html`
+- Add `Modernizr` to externals webpack
+- Reorganize config
+- Change task `html`
+- Change task `sprite:svg`
+- Reorganize the directory source
+
 ## [0.1.1] - 2015-12-27
 ### Fixed
 - Fix path to HTML.
@@ -12,5 +21,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit.
 
-[Unreleased]: https://github.com/exeto/gbp/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/exeto/gbp/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/exeto/gbp/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/exeto/gbp/compare/v0.1.0...v0.1.1
