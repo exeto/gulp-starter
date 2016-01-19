@@ -92,9 +92,9 @@ module.exports = {
   modernizr: {
     filename: 'modernizr.js',
     config: {
-      'minify': true,
-      'classPrefix': 'm-',
-      'options': [
+      minify: true,
+      classPrefix: 'm-',
+      options: [
         'html5shiv',
         'setClasses',
       ],
