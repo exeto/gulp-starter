@@ -10,6 +10,7 @@
     "url": "exeto.me"
   },
   "scripts": {
+    "test": "eslint .",
     "start": "gulp",
     "build": "NODE_ENV=production gulp build"
   },
