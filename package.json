@@ -60,6 +60,6 @@
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
     "vinyl-buffer": "^1.0.0",
-    "webpack": "^1.12.9"
+    "webpack": "^1.12.11"
   }
 }
