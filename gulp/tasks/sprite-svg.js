@@ -17,11 +17,11 @@ const paths = {
     cfg.js.head.src),
 };
 
-gulp.task('sprite:svg', () => {
-  return gulp.src(paths.src)
+gulp.task('sprite:svg', () => (
+  gulp.src(paths.src)
     .pipe(_if(!cfg.production, plumber(handleErrors)))
     .pipe(_if(cfg.spriteSvg.optimize, imagemin(cfg.imagemin)))
     .pipe(svgstore(cfg.spriteSvg.svgstore))
     .pipe(svg2string())
-    .pipe(gulp.dest(paths.jsHeadSrc));
-});
+    .pipe(gulp.dest(paths.jsHeadSrc))
+));

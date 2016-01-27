@@ -16,8 +16,8 @@ const paths = {
   dest: path.join(cfg.root.dest, cfg.static.dest, cfg.img.dest),
 };
 
-gulp.task('img', () => {
-  return gulp.src(paths.src)
+gulp.task('img', () => (
+  gulp.src(paths.src)
     .pipe(_if(cfg.img.optimize, imagemin(cfg.imagemin)))
-    .pipe(gulp.dest(paths.dest));
-});
+    .pipe(gulp.dest(paths.dest))
+));

@@ -16,11 +16,11 @@ const paths = {
   dest: path.join(cfg.root.dest, cfg.static.dest, cfg.js.dest),
 };
 
-gulp.task('js:head', () => {
-  return gulp.src(paths.src)
+gulp.task('js:head', () => (
+  gulp.src(paths.src)
     .pipe(_if(!cfg.production, plumber(handleErrors)))
     .pipe(concat(cfg.js.head.filename))
     .pipe(_if(cfg.js.head.minify, uglify()))
     .pipe(gulp.dest(paths.dest))
-    .pipe(bs.stream());
-});
+    .pipe(bs.stream())
+));

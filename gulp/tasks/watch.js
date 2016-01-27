@@ -7,7 +7,7 @@ const cfg  = require('config');
 const paths = {
   js: [
     path.join(cfg.root.src, cfg.static.src, cfg.js.src, '/**/*.js'),
-    path.join('!' + cfg.root.src, cfg.static.src, cfg.js.src, cfg.js.head.src,
+    path.join(`!${cfg.root.src}`, cfg.static.src, cfg.js.src, cfg.js.head.src,
       '/**/*'),
   ],
   jsHead: path.join(cfg.root.src, cfg.static.src, cfg.js.src, cfg.js.head.src,

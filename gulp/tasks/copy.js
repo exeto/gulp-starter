@@ -8,9 +8,9 @@ const cfg     = require('config');
 
 const copy = cfg.copy.map(folder => path.join(cfg.root.src, folder, '/**/*'));
 
-gulp.task('copy', () => {
-  return gulp.src(copy)
+gulp.task('copy', () => (
+  gulp.src(copy)
     .pipe(changed(cfg.root.dest))
     .pipe(gulp.dest(cfg.root.dest))
-    .pipe(bs.stream());
-});
+    .pipe(bs.stream())
+));

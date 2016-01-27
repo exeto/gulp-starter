@@ -10,8 +10,8 @@ const paths = {
   dest: path.join(cfg.root.src, cfg.static.src, cfg.sass.src),
 };
 
-gulp.task('csscomb', () => {
-  return gulp.src(paths.src)
+gulp.task('csscomb', () => (
+  gulp.src(paths.src)
     .pipe(csscomb())
-    .pipe(gulp.dest(paths.dest));
-});
+    .pipe(gulp.dest(paths.dest))
+));
