@@ -1,7 +1,7 @@
 {
-  "name": "gbp",
+  "name": "gulp-starter",
   "version": "0.2.0",
-  "description": "Gulp boilerplate",
+  "description": "Gulp starter",
   "license": "MIT",
   "repository": "exeto/gbp",
   "author": {
@@ -14,10 +14,6 @@
     "start": "gulp",
     "build": "NODE_ENV=production gulp build"
   },
-  "keywords": [
-    "gulp",
-    "boilerplate"
-  ],
   "devDependencies": {
     "autoprefixer": "^6.2.1",
     "babel-core": "^6.4.5",

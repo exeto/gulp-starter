@@ -1,6 +1,6 @@
-# gbp [![devDependency Status][depstat-image]][depstat-url]
+# gulp-starter [![devDependency Status][dev-depstat-image]][dev-depstat-url]
 
-> Gulp boilerplate.
+> Gulp starter.
 
 ## Features
 
@@ -13,8 +13,8 @@
 ## Install
 
 ```bash
-$ git clone https://github.com/exeto/gbp.git
-$ cd gbp && npm i
+$ git clone https://github.com/exeto/gulp-starter.git
+$ cd gulp-starter && npm i
 ```
 
 ## Usage
@@ -31,5 +31,5 @@ $ npm run build
 
 [MIT](LICENSE.md) © [Timofey Dergachev](http://exeto.me/)
 
-[depstat-url]: https://david-dm.org/exeto/gbp#info=devDependencies
-[depstat-image]: https://david-dm.org/exeto/gbp/dev-status.svg
+[dev-depstat-url]: https://david-dm.org/exeto/gulp-starter#info=devDependencies
+[dev-depstat-image]: https://img.shields.io/david/dev/exeto/gulp-starter.svg?style=flat-square
