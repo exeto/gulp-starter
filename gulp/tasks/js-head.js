@@ -6,7 +6,6 @@ const concat       = require('gulp-concat');
 const plumber      = require('gulp-plumber');
 const uglify       = require('gulp-uglify');
 const _if          = require('gulp-if');
-const bs           = require('browser-sync');
 const cfg          = require('config');
 const handleErrors = require('../handlers/error');
 
@@ -22,5 +21,4 @@ gulp.task('js:head', () => (
     .pipe(concat(cfg.js.head.filename))
     .pipe(_if(cfg.js.head.minify, uglify()))
     .pipe(gulp.dest(paths.dest))
-    .pipe(bs.stream())
 ));

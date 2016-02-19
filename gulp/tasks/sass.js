@@ -6,7 +6,6 @@ const sass         = require('gulp-sass');
 const sourcemaps   = require('gulp-sourcemaps');
 const plumber      = require('gulp-plumber');
 const _if          = require('gulp-if');
-const bs           = require('browser-sync');
 const postcss      = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano      = require('cssnano');
@@ -34,6 +33,5 @@ gulp.task('sass', () => {
     .pipe(postcss(processors))
     .pipe(_if(cfg.sass.sourcemaps, cfg.sass.sourcemapsInline ?
       sourcemaps.write('.') : sourcemaps.write()))
-    .pipe(gulp.dest(paths.dest))
-    .pipe(bs.stream());
+    .pipe(gulp.dest(paths.dest));
 });

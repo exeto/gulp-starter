@@ -12,7 +12,6 @@ const render       = require('gulp-nunjucks-render');
 const htmlmin      = require('gulp-htmlmin');
 const posthtml     = require('gulp-posthtml');
 const bem          = require('posthtml-bem');
-const bs           = require('browser-sync');
 const cfg          = require('config');
 const handleErrors = require('../handlers/error');
 const readFile     = pify(fs.readFile);
@@ -63,6 +62,5 @@ gulp.task('html', () => {
     .pipe(render())
     .pipe(posthtml(bem(cfg.html.bem)))
     .pipe(_if(cfg.html.minify, htmlmin(cfg.html.htmlmin)))
-    .pipe(gulp.dest(cfg.root.dest))
-    .pipe(bs.stream());
+    .pipe(gulp.dest(cfg.root.dest));
 });
