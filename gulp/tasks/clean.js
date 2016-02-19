@@ -11,6 +11,4 @@ const clean = [
   path.join(cfg.root.src, cfg.static.src, cfg.js.src, cfg.js.head.src),
 ];
 
-gulp.task('clean', (done) => {
-  del(clean).then(() => done());
-});
+gulp.task('clean', () => del(clean));

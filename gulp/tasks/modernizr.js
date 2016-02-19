@@ -13,8 +13,8 @@ const paths = {
     cfg.modernizr.filename),
 };
 
-gulp.task('modernizr', done => {
-  modernizr.build(cfg.modernizr.config, result => {
+gulp.task('modernizr', (done) => {
+  modernizr.build(cfg.modernizr.config, (result) => {
     mkdirp(paths.dirDest, err => {
       if (err) { return console.error(err.toString()); }
 
