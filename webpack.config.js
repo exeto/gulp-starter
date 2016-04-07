@@ -23,7 +23,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loader: 'babel',
         query: {
           cacheDirectory: true,
@@ -39,6 +39,8 @@ module.exports = {
   },
 
   devtool: cfg.js.sourcemaps,
+
+  watch: true,
 
   plugins: [
     new webpack.NoErrorsPlugin(),
@@ -57,6 +59,8 @@ if (cfg.js.minify) {
 }
 
 if (cfg.production) {
+  module.exports.watch = false;
+
   module.exports.plugins.push(
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin()

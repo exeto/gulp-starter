@@ -5,11 +5,6 @@ const gulp = require('gulp');
 const cfg = require('config');
 
 const paths = {
-  js: [
-    path.join(cfg.root.src, cfg.static.src, cfg.js.src, '/**/*.js'),
-    path.join(`!${cfg.root.src}`, cfg.static.src, cfg.js.src, cfg.js.head.src,
-      '/**/*'),
-  ],
   jsHead: path.join(cfg.root.src, cfg.static.src, cfg.js.src, cfg.js.head.src,
     '/**/*.js'),
   sass: path.join(cfg.root.src, cfg.static.src, cfg.sass.src, '/**/*.scss'),
@@ -28,7 +23,6 @@ const paths = {
 };
 
 gulp.task('watch', () => {
-  gulp.watch(paths.js, ['webpack']);
   gulp.watch(paths.jsHead, ['js:head']);
   gulp.watch(paths.sass, ['sass']);
   gulp.watch(paths.sprite, ['sprite', 'sass']);

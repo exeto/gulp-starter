@@ -2,13 +2,20 @@
 
 const gulp = require('gulp');
 const webpack = require('webpack');
+
 const wpcfg = require('../../webpack.config');
 
-gulp.task('webpack', (done) => {
+gulp.task('webpack', cb => {
   webpack(wpcfg, (err, stats) => {
-    if (err) { throw new Error('webpack', err); }
+    if (!err) {
+      console.log('[webpack]', stats.toString({ colors: true }));
+    }
 
-    console.log('[webpack]', stats.toString({ colors: true }));
-    done();
+    if (!wpcfg.watch && err) {
+      cb(err);
+    } else if (!cb.called) {
+      cb.called = true;
+      cb();
+    }
   });
 });
