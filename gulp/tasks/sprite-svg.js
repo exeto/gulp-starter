@@ -1,13 +1,13 @@
 'use strict';
 
-const path         = require('path');
-const gulp         = require('gulp');
-const _if          = require('gulp-if');
-const plumber      = require('gulp-plumber');
-const imagemin     = require('gulp-imagemin');
-const svgstore     = require('gulp-svgstore');
-const svg2string   = require('gulp-svg2string');
-const cfg          = require('config');
+const path = require('path');
+const gulp = require('gulp');
+const _if = require('gulp-if');
+const plumber = require('gulp-plumber');
+const imagemin = require('gulp-imagemin');
+const svgstore = require('gulp-svgstore');
+const svg2string = require('gulp-svg2string');
+const cfg = require('config');
 const handleErrors = require('../handlers/error');
 
 const paths = {

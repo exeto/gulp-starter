@@ -2,7 +2,7 @@
 
 const path = require('path');
 const gulp = require('gulp');
-const cfg  = require('config');
+const cfg = require('config');
 
 const paths = {
   js: [

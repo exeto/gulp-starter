@@ -1,8 +1,8 @@
 'use strict';
 
-const gulp    = require('gulp');
+const gulp = require('gulp');
 const webpack = require('webpack');
-const wpcfg   = require('../../webpack.config');
+const wpcfg = require('../../webpack.config');
 
 gulp.task('webpack', (done) => {
   webpack(wpcfg, (err, stats) => {

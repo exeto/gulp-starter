@@ -1,8 +1,8 @@
 'use strict';
 
-const path    = require('path');
+const path = require('path');
 const webpack = require('webpack');
-const cfg     = require('config');
+const cfg = require('config');
 
 const paths = {
   context: path.join(__dirname, cfg.root.src, cfg.static.src, cfg.js.src),

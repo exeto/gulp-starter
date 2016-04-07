@@ -1,14 +1,14 @@
 'use strict';
 
-const path         = require('path');
-const gulp         = require('gulp');
-const spritesmith  = require('gulp.spritesmith');
-const imagemin     = require('gulp-imagemin');
-const plumber      = require('gulp-plumber');
-const buffer       = require('vinyl-buffer');
-const merge        = require('merge-stream');
-const _if          = require('gulp-if');
-const cfg          = require('config');
+const path = require('path');
+const gulp = require('gulp');
+const spritesmith = require('gulp.spritesmith');
+const imagemin = require('gulp-imagemin');
+const plumber = require('gulp-plumber');
+const buffer = require('vinyl-buffer');
+const merge = require('merge-stream');
+const _if = require('gulp-if');
+const cfg = require('config');
 const handleErrors = require('../handlers/error');
 
 const paths = {

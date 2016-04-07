@@ -1,12 +1,12 @@
 'use strict';
 
-const path         = require('path');
-const gulp         = require('gulp');
-const concat       = require('gulp-concat');
-const plumber      = require('gulp-plumber');
-const uglify       = require('gulp-uglify');
-const _if          = require('gulp-if');
-const cfg          = require('config');
+const path = require('path');
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+const plumber = require('gulp-plumber');
+const uglify = require('gulp-uglify');
+const _if = require('gulp-if');
+const cfg = require('config');
 const handleErrors = require('../handlers/error');
 
 const paths = {

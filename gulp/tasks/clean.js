@@ -2,8 +2,8 @@
 
 const path = require('path');
 const gulp = require('gulp');
-const del  = require('del');
-const cfg  = require('config');
+const del = require('del');
+const cfg = require('config');
 
 const clean = [
   cfg.root.dest,

@@ -2,8 +2,8 @@
 
 const path = require('path');
 const gulp = require('gulp');
-const bs   = require('browser-sync').create();
-const cfg  = require('config');
+const bs = require('browser-sync').create();
+const cfg = require('config');
 
 const watch = path.join(cfg.root.dest, '**/*.*');
 cfg.browserSync.server = cfg.root.dest;

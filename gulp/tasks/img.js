@@ -1,10 +1,10 @@
 'use strict';
 
-const path     = require('path');
-const gulp     = require('gulp');
+const path = require('path');
+const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
-const _if      = require('gulp-if');
-const cfg      = require('config');
+const _if = require('gulp-if');
+const cfg = require('config');
 
 const paths = {
   src: [

@@ -1,9 +1,9 @@
 'use strict';
 
-const path   = require('path');
-const gulp   = require('gulp');
+const path = require('path');
+const gulp = require('gulp');
 const eslint = require('eslint/lib/cli');
-const cfg    = require('config');
+const cfg = require('config');
 
 const src = path.join(cfg.root.src, cfg.static.src, cfg.js.src);
 

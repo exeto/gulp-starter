@@ -1,20 +1,20 @@
 'use strict';
 
-const path         = require('path');
-const fs           = require('fs');
-const co           = require('co');
-const pify         = require('pify');
-const gulp         = require('gulp');
-const plumber      = require('gulp-plumber');
-const _if          = require('gulp-if');
-const data         = require('gulp-data');
-const render       = require('gulp-nunjucks-render');
-const htmlmin      = require('gulp-htmlmin');
-const posthtml     = require('gulp-posthtml');
-const bem          = require('posthtml-bem');
-const cfg          = require('config');
+const path = require('path');
+const fs = require('fs');
+const co = require('co');
+const pify = require('pify');
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const _if = require('gulp-if');
+const data = require('gulp-data');
+const render = require('gulp-nunjucks-render');
+const htmlmin = require('gulp-htmlmin');
+const posthtml = require('gulp-posthtml');
+const bem = require('posthtml-bem');
+const cfg = require('config');
 const handleErrors = require('../handlers/error');
-const readFile     = pify(fs.readFile);
+const readFile = pify(fs.readFile);
 
 const paths = {
   src: [

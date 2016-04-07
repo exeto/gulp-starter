@@ -1,15 +1,15 @@
 'use strict';
 
-const path         = require('path');
-const gulp         = require('gulp');
-const sass         = require('gulp-sass');
-const sourcemaps   = require('gulp-sourcemaps');
-const plumber      = require('gulp-plumber');
-const _if          = require('gulp-if');
-const postcss      = require('gulp-postcss');
+const path = require('path');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
+const _if = require('gulp-if');
+const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const cssnano      = require('cssnano');
-const cfg          = require('config');
+const cssnano = require('cssnano');
+const cfg = require('config');
 const handleErrors = require('../handlers/error');
 
 const paths = {
