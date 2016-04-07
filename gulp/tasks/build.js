@@ -7,7 +7,7 @@ gulp.task('build', (done) => {
   runSequence(
     'clean',
     ['sprite', 'sprite:svg', 'modernizr',
-    'html', 'img', 'copy', 'eslint', 'webpack'],
+    'html', 'img', 'copy', 'webpack'],
     ['sass', 'js:head'], done
   );
 });
