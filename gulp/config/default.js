@@ -56,8 +56,7 @@ module.exports = {
     src: 'js',
     dest: 'js',
     minify: false,
-    sourcemaps: true,
-    sourcemapsType: 'eval',
+    sourcemaps: 'eval',
     head: {
       src: 'head',
       filename: 'head.js',

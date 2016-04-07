@@ -16,7 +16,7 @@ module.exports = {
 
   js: {
     minify: true,
-    sourcemaps: false,
+    sourcemaps: null,
     head: {
       minify: true,
     },

@@ -38,7 +38,7 @@ module.exports = {
     modernizr: 'Modernizr',
   },
 
-  devtool: cfg.js.sourcemaps ? cfg.js.sourcemapsType : null,
+  devtool: cfg.js.sourcemaps,
 
   plugins: [
     new webpack.NoErrorsPlugin(),
