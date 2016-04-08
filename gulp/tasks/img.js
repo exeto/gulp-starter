@@ -2,8 +2,7 @@
 
 const path = require('path');
 const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
-const _if = require('gulp-if');
+const $ = require('gulp-load-plugins')();
 const cfg = require('config');
 
 const paths = {
@@ -17,6 +16,6 @@ const paths = {
 
 gulp.task('img', () => (
   gulp.src(paths.src)
-    .pipe(_if(cfg.img.optimize, imagemin(cfg.imagemin)))
+    .pipe($.if(cfg.img.optimize, $.imagemin(cfg.imagemin)))
     .pipe(gulp.dest(paths.dest))
 ));

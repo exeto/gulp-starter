@@ -5,15 +5,13 @@ const fs = require('fs');
 const co = require('co');
 const pify = require('pify');
 const gulp = require('gulp');
-const plumber = require('gulp-plumber');
-const _if = require('gulp-if');
-const data = require('gulp-data');
-const render = require('gulp-nunjucks-render');
-const htmlmin = require('gulp-htmlmin');
+const $ = require('gulp-load-plugins')();
 const posthtml = require('gulp-posthtml');
 const bem = require('posthtml-bem');
 const cfg = require('config');
+
 const handleErrors = require('../handlers/error');
+
 const readFile = pify(fs.readFile);
 
 const paths = {
@@ -52,13 +50,13 @@ function getData(file) {
 }
 
 gulp.task('html', () => {
-  render.nunjucks.configure([paths.htmlFolder], { watch: false });
+  $.nunjucksRender.nunjucks.configure([paths.htmlFolder], { watch: false });
 
   return gulp.src(paths.src)
-    .pipe(_if(!cfg.production, plumber(handleErrors)))
-    .pipe(data(getData))
-    .pipe(render())
+    .pipe($.if(!cfg.production, $.plumber(handleErrors)))
+    .pipe($.data(getData))
+    .pipe($.nunjucksRender())
     .pipe(posthtml(bem(cfg.html.bem)))
-    .pipe(_if(cfg.html.minify, htmlmin(cfg.html.htmlmin)))
+    .pipe($.if(cfg.html.minify, $.htmlmin(cfg.html.htmlmin)))
     .pipe(gulp.dest(cfg.root.dest));
 });

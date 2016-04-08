@@ -2,13 +2,11 @@
 
 const path = require('path');
 const gulp = require('gulp');
-const spritesmith = require('gulp.spritesmith');
-const imagemin = require('gulp-imagemin');
-const plumber = require('gulp-plumber');
+const $ = require('gulp-load-plugins')();
 const buffer = require('vinyl-buffer');
 const merge = require('merge-stream');
-const _if = require('gulp-if');
 const cfg = require('config');
+
 const handleErrors = require('../handlers/error');
 
 const paths = {
@@ -21,12 +19,12 @@ cfg.sprite.spritesmith.retinaSrcFilter = path.join(cfg.root.src, cfg.static.src,
 
 gulp.task('sprite', () => {
   const spriteData = gulp.src(paths.src)
-    .pipe(_if(!cfg.production, plumber(handleErrors)))
-    .pipe(spritesmith(cfg.sprite.spritesmith));
+    .pipe($.if(!cfg.production, $.plumber(handleErrors)))
+    .pipe($.spritesmith(cfg.sprite.spritesmith));
 
   const imgStream = spriteData.img
     .pipe(buffer())
-    .pipe(_if(cfg.sprite.optimize, imagemin(cfg.imagemin)))
+    .pipe($.if(cfg.sprite.optimize, $.imagemin(cfg.imagemin)))
     .pipe(gulp.dest(paths.imgDest));
 
   const cssStream = spriteData.css
