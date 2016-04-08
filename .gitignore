@@ -10,5 +10,4 @@ npm-debug.log
 
 # OTHER
 public
-source/static/scss/_sprite.scss
-source/static/js/head
+tmp

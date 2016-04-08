@@ -8,13 +8,12 @@ const mkdirp = require('mkdirp');
 const cfg = require('config');
 
 const paths = {
-  dirDest: path.join(cfg.root.src, cfg.static.src, cfg.js.src, cfg.js.head.src),
-  dest: path.join(cfg.root.src, cfg.static.src, cfg.js.src, cfg.js.head.src,
-    cfg.modernizr.filename),
+  dirDest: path.join(cfg.tmp, cfg.jsHead.src),
+  dest: path.join(cfg.tmp, cfg.jsHead.src, 'modernizr.js'),
 };
 
 gulp.task('modernizr', (done) => {
-  modernizr.build(cfg.modernizr.config, (result) => {
+  modernizr.build(cfg.modernizr, (result) => {
     mkdirp(paths.dirDest, err => {
       if (err) { return console.error(err.toString()); }
 

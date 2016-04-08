@@ -13,8 +13,7 @@ const handleErrors = require('../handlers/error');
 const paths = {
   src: path.join(cfg.root.src, cfg.static.src, cfg.img.src, cfg.spriteSvg.src,
     '/**/*.svg'),
-  jsHeadSrc: path.join(cfg.root.src, cfg.static.src, cfg.js.src,
-    cfg.js.head.src),
+  dest: path.join(cfg.tmp, cfg.jsHead.src),
 };
 
 gulp.task('sprite:svg', () => (
@@ -23,5 +22,5 @@ gulp.task('sprite:svg', () => (
     .pipe(_if(cfg.spriteSvg.optimize, imagemin(cfg.imagemin)))
     .pipe(svgstore(cfg.spriteSvg.svgstore))
     .pipe(svg2string())
-    .pipe(gulp.dest(paths.jsHeadSrc))
+    .pipe(gulp.dest(paths.dest))
 ));

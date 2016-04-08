@@ -3,6 +3,8 @@
 module.exports = {
   production: process.env.NODE_ENV === 'production',
 
+  tmp: 'tmp',
+
   root: {
     src: 'source',
     dest: 'public',
@@ -30,7 +32,10 @@ module.exports = {
     minify: false,
     sourcemaps: true,
     sourcemapsInline: false,
-    config: { outputStyle: 'expanded' },
+    config: {
+      outputStyle: 'expanded',
+      includePaths: ['tmp'],
+    },
   },
 
   html: {
@@ -57,11 +62,12 @@ module.exports = {
     dest: 'js',
     minify: false,
     sourcemaps: 'eval',
-    head: {
-      src: 'head',
-      filename: 'head.js',
-      minify: false,
-    },
+  },
+
+  jsHead: {
+    src: 'head',
+    filename: 'head.js',
+    minify: false,
   },
 
   sprite: {
@@ -89,16 +95,13 @@ module.exports = {
   },
 
   modernizr: {
-    filename: 'modernizr.js',
-    config: {
-      minify: true,
-      classPrefix: 'm-',
-      options: [
-        'html5shiv',
-        'setClasses',
-      ],
-      'feature-detects': [],
-    },
+    minify: true,
+    classPrefix: 'm-',
+    options: [
+      'html5shiv',
+      'setClasses',
+    ],
+    'feature-detects': [],
   },
 
   browserSync: {

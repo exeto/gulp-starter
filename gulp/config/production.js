@@ -17,9 +17,10 @@ module.exports = {
   js: {
     minify: true,
     sourcemaps: null,
-    head: {
-      minify: true,
-    },
+  },
+
+  jsHead: {
+    minify: true,
   },
 
   sprite: {

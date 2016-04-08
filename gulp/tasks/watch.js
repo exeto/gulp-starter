@@ -5,8 +5,7 @@ const gulp = require('gulp');
 const cfg = require('config');
 
 const paths = {
-  jsHead: path.join(cfg.root.src, cfg.static.src, cfg.js.src, cfg.js.head.src,
-    '/**/*.js'),
+  jsHead: path.join(cfg.tmp, cfg.jsHead.src, '/**/*.js'),
   sass: path.join(cfg.root.src, cfg.static.src, cfg.sass.src, '/**/*.scss'),
   sprite: path.join(cfg.root.src, cfg.static.src, cfg.img.src, cfg.sprite.src,
     '/**/*.png'),

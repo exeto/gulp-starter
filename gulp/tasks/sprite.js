@@ -16,8 +16,6 @@ const paths = {
     '/**/*.png'),
   imgDest: path.join(cfg.root.dest, cfg.static.dest, cfg.img.dest,
     cfg.sprite.imgDest),
-  scssDest: path.join(cfg.root.src, cfg.static.src, cfg.sass.src,
-    cfg.sprite.scssDest),
 };
 
 cfg.sprite.spritesmith.retinaSrcFilter = path.join(cfg.root.src, cfg.static.src,
@@ -34,7 +32,7 @@ gulp.task('sprite', () => {
     .pipe(gulp.dest(paths.imgDest));
 
   const cssStream = spriteData.css
-    .pipe(gulp.dest(paths.scssDest));
+    .pipe(gulp.dest(cfg.tmp));
 
   return merge(imgStream, cssStream);
 });
