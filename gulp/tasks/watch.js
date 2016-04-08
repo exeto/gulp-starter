@@ -7,14 +7,11 @@ const cfg = require('config');
 const paths = {
   jsHead: path.join(cfg.tmp, cfg.jsHead.src, '/**/*.js'),
   sass: path.join(cfg.root.src, cfg.static.src, cfg.sass.src, '/**/*.scss'),
-  sprite: path.join(cfg.root.src, cfg.static.src, cfg.img.src, cfg.sprite.src,
-    '/**/*.png'),
-  spriteSvg: path.join(cfg.root.src, cfg.static.src, cfg.img.src,
-    cfg.spriteSvg.src, '/**/*.svg'),
+  sprite: path.join(cfg.root.src, cfg.static.src, cfg.img.src, cfg.sprite.src, '/**/*.png'),
+  spriteSvg: path.join(cfg.root.src, cfg.static.src, cfg.img.src, cfg.spriteSvg.src, '/**/*.svg'),
   html: path.join(cfg.root.src, cfg.html.src, '/**/*.{html,json}'),
   img: [
-    path.join(cfg.root.src, cfg.static.src, cfg.img.src,
-      '/**/*.{png,jpg,jpeg,JPG,JPEG,gif,svg}'),
+    path.join(cfg.root.src, cfg.static.src, cfg.img.src, '/**/*.{png,jpg,jpeg,JPG,JPEG,gif,svg}'),
     path.join(`!${cfg.root.src}`, cfg.static.src, cfg.img.src,
       `{${cfg.img.excludeFolders.join(',')}}`, '/**'),
   ],

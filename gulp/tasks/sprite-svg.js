@@ -11,8 +11,7 @@ const cfg = require('config');
 const handleErrors = require('../handlers/error');
 
 const paths = {
-  src: path.join(cfg.root.src, cfg.static.src, cfg.img.src, cfg.spriteSvg.src,
-    '/**/*.svg'),
+  src: path.join(cfg.root.src, cfg.static.src, cfg.img.src, cfg.spriteSvg.src, '/**/*.svg'),
   dest: path.join(cfg.tmp, cfg.jsHead.src),
 };
 

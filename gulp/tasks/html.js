@@ -19,8 +19,7 @@ const readFile = pify(fs.readFile);
 const paths = {
   src: [
     path.join(cfg.root.src, cfg.html.src, '/**/*.html'),
-    path.join(`!${cfg.root.src}`, cfg.html.src,
-      `{${cfg.html.excludeFolders.join(',')}}`, '/**'),
+    path.join(`!${cfg.root.src}`, cfg.html.src, `{${cfg.html.excludeFolders.join(',')}}`, '/**'),
   ],
   dest: path.join(cfg.root.dest, cfg.html.dest),
   htmlFolder: path.join(cfg.root.src, cfg.html.src),
@@ -41,8 +40,7 @@ function getData(file) {
   return co(function* () {
     const pathParsed = path.parse(file.path);
     const diffPath = path.relative(paths.htmlFolder, pathParsed.dir);
-    const pathLocalFile = path.join(paths.dataFolder, diffPath,
-      `${pathParsed.name}.json`);
+    const pathLocalFile = path.join(paths.dataFolder, diffPath, `${pathParsed.name}.json`);
 
     return {
       global: fileExists(paths.dataGlobalFile) ?
