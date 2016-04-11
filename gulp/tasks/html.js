@@ -2,8 +2,6 @@
 
 const path = require('path');
 const fs = require('fs');
-const co = require('co');
-const pify = require('pify');
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const posthtml = require('gulp-posthtml');
@@ -11,8 +9,6 @@ const bem = require('posthtml-bem');
 const cfg = require('config');
 
 const handleErrors = require('../handlers/error');
-
-const readFile = pify(fs.readFile);
 
 const paths = {
   src: [
@@ -35,18 +31,18 @@ function fileExists(filePath) {
 }
 
 function getData(file) {
-  return co(function* () {
-    const pathParsed = path.parse(file.path);
-    const diffPath = path.relative(paths.htmlFolder, pathParsed.dir);
-    const pathLocalFile = path.join(paths.dataFolder, diffPath, `${pathParsed.name}.json`);
+  const pathParsed = path.parse(file.path);
+  const diffPath = path.relative(paths.htmlFolder, pathParsed.dir);
+  const pathLocalFile = path.join(paths.dataFolder, diffPath, `${pathParsed.name}.json`);
 
-    return {
-      global: fileExists(paths.dataGlobalFile) ?
-        JSON.parse(yield readFile(paths.dataGlobalFile)) : {},
-      local: fileExists(pathLocalFile) ?
-        JSON.parse(yield readFile(pathLocalFile)) : {},
-    };
-  });
+  return {
+    global: fileExists(paths.dataGlobalFile)
+      ? JSON.parse(fs.readFileSync(paths.dataGlobalFile, 'utf-8'))
+      : {},
+    local: fileExists(pathLocalFile)
+      ? JSON.parse(fs.readFileSync(pathLocalFile, 'utf-8'))
+      : {},
+  };
 }
 
 gulp.task('html', () => {
