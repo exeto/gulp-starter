@@ -45,14 +45,18 @@ function getData(file) {
   };
 }
 
-gulp.task('html', () => {
-  $.nunjucksRender.nunjucks.configure([paths.htmlFolder], { watch: false });
-
-  return gulp.src(paths.src)
+gulp.task('html', () => (
+  gulp.src(paths.src)
     .pipe($.if(!cfg.production, $.plumber(handleErrors)))
     .pipe($.data(getData))
-    .pipe($.nunjucksRender())
+    .pipe($.nunjucksRender({
+      path: paths.htmlFolder,
+      envOptions: {
+        watch: false,
+        autoescape: false,
+      },
+    }))
     .pipe(posthtml(bem(cfg.html.bem)))
     .pipe($.if(cfg.html.minify, $.htmlmin(cfg.html.htmlmin)))
-    .pipe(gulp.dest(cfg.root.dest));
-});
+    .pipe(gulp.dest(cfg.root.dest))
+));
