@@ -3,11 +3,10 @@
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
-gulp.task('default', (done) => {
+gulp.task('default', cb => {
   runSequence(
     'clean',
-    ['sprite', 'sprite:svg', 'modernizr',
-    'html', 'img', 'copy', 'webpack'],
-    ['sass', 'js:head'], 'watch', 'browser-sync', done
+    ['sprite', 'sprite:svg', 'modernizr', 'copy'],
+    'watch', 'dev-server', 'html', cb
   );
 });

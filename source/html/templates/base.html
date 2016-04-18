@@ -6,8 +6,8 @@
     <title>{{ local.title }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="static/css/main.css">
-    <script src="static/js/head.js"></script>
+    {% if assets.main.css %}<link rel="stylesheet" href="{{ assets.main.css }}">{% endif %}
+    <script src="{{ assets.head.js }}"></script>
   </head>
   <body class="preview-body">
     <!-- SVG sprite include -->
@@ -26,6 +26,6 @@
 
     {% block hello %}{% endblock %}
 
-    <script src="static/js/main.js"></script>
+    <script src="{{ assets.main.js }}"></script>
   </body>
 </html>
