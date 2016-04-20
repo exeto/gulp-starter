@@ -8,8 +8,8 @@ const mkdirp = require('mkdirp');
 const cfg = require('config');
 
 const paths = {
-  dirDest: path.join(cfg.tmp, cfg.jsHead.src),
-  dest: path.join(cfg.tmp, cfg.jsHead.src, 'modernizr.js'),
+  dirDest: path.join(cfg.tmp, cfg.jsHead),
+  dest: path.join(cfg.tmp, cfg.jsHead, 'modernizr.js'),
 };
 
 gulp.task('modernizr', (done) => {

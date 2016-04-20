@@ -4,15 +4,14 @@ module.exports = {
   production: process.env.NODE_ENV === 'production',
 
   tmp: 'tmp',
+  static: 'static',
+  fonts: 'fonts',
+  manifest: 'assets.json',
+  jsHead: 'head',
 
   root: {
     src: 'source',
     dest: 'public',
-  },
-
-  static: {
-    src: 'static',
-    dest: 'static',
   },
 
   copy: [
@@ -22,24 +21,15 @@ module.exports = {
   img: {
     src: 'img',
     dest: 'img',
-    excludeFolders: ['sprite', 'sprite-svg'],
-    optimize: false,
   },
 
   sass: {
     src: 'scss',
     dest: 'css',
-    minify: false,
-    sourcemaps: true,
-    sourcemapsInline: false,
-    config: {
-      outputStyle: 'expanded',
-      includePaths: ['tmp'],
-    },
   },
 
   html: {
-    src: 'pages',
+    src: 'html',
     dest: './',
     dataFolder: 'data',
     dataGlobalFile: 'global.json',
@@ -60,14 +50,7 @@ module.exports = {
   js: {
     src: 'js',
     dest: 'js',
-    minify: false,
-    sourcemaps: 'eval',
-  },
-
-  jsHead: {
-    src: 'head',
-    filename: 'head.js',
-    minify: false,
+    sourcemaps: 'cheap-module-eval-source-map',
   },
 
   sprite: {
@@ -77,9 +60,9 @@ module.exports = {
     optimize: false,
     spritesmith: {
       retinaImgName: 'sprite@2x.png',
-      retinaImgPath: '../img/sprite@2x.png',
+      retinaImgPath: 'img/sprite@2x.png',
       imgName: 'sprite.png',
-      imgPath: '../img/sprite.png',
+      imgPath: 'img/sprite.png',
       cssName: '_sprite.scss',
       cssTemplate: 'gulp/templates/sprite-template.scss',
       padding: 1,
@@ -102,10 +85,6 @@ module.exports = {
       'setClasses',
     ],
     'feature-detects': [],
-  },
-
-  browserSync: {
-    open: false,
   },
 
   imagemin: {

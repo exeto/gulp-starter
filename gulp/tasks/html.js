@@ -22,11 +22,12 @@ const paths = {
     cfg.html.dataGlobalFile),
 };
 
-function fileExists(filePath) {
+function readJson(filePath, cache) {
   try {
-    return fs.statSync(filePath).isFile();
+    fs.statSync(filePath).isFile();
+    return cache ? require(filePath) : JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   } catch (err) {
-    return false;
+    return {};
   }
 }
 
@@ -34,14 +35,12 @@ function getData(file) {
   const pathParsed = path.parse(file.path);
   const diffPath = path.relative(paths.htmlFolder, pathParsed.dir);
   const pathLocalFile = path.join(paths.dataFolder, diffPath, `${pathParsed.name}.json`);
+  const pathManifest = path.join(process.env.PWD, cfg.tmp, cfg.manifest);
 
   return {
-    global: fileExists(paths.dataGlobalFile)
-      ? JSON.parse(fs.readFileSync(paths.dataGlobalFile, 'utf-8'))
-      : {},
-    local: fileExists(pathLocalFile)
-      ? JSON.parse(fs.readFileSync(pathLocalFile, 'utf-8'))
-      : {},
+    global: readJson(paths.dataGlobalFile),
+    local: readJson(pathLocalFile),
+    assets: readJson(pathManifest, true),
   };
 }
 
