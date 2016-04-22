@@ -1,4 +1,7 @@
 {
   "parser": "babel-eslint",
-  "extends": "exeto/base"
+  "extends": "exeto/base",
+  "rules": {
+    "import/no-unresolved": [2, { "ignore": ["^head/"] }]
+  }
 }
