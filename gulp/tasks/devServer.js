@@ -12,7 +12,7 @@ const wpcfg = require('../../webpack/config.dev');
 const compiler = webpack(wpcfg);
 
 gulp.task('dev-server', cb => {
-  bs.init({
+  const bsConfig = {
     open: false,
     notify: false,
 
@@ -34,7 +34,7 @@ gulp.task('dev-server', cb => {
     files: [
       path.join(cfg.root.dest, '/**'),
     ],
-  });
+  };
 
   compiler.plugin('done', stats => {
     notifier.notify({
@@ -42,9 +42,8 @@ gulp.task('dev-server', cb => {
       message: stats.toJson().errors[0],
     });
 
-    if (!cb.called) {
-      cb.called = true;
-      cb();
+    if (!bs.active) {
+      bs.init(bsConfig, cb);
     }
   });
 });
