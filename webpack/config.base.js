@@ -31,7 +31,7 @@ module.exports = {
 
   sassLoader: {
     includePaths: [
-      path.join(__dirname, '..', cfg.tmp),
+      path.join(__dirname, '..', cfg.tmp, cfg.sprite.dest),
     ],
   },
 

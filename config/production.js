@@ -9,10 +9,6 @@ module.exports = {
     sourcemaps: null,
   },
 
-  sprite: {
-    optimize: true,
-  },
-
   spriteSvg: {
     optimize: true,
   },

@@ -55,17 +55,13 @@ module.exports = {
 
   sprite: {
     src: 'sprite',
-    imgDest: './',
-    scssDest: './',
-    optimize: false,
+    dest: 'sprite',
     spritesmith: {
-      retinaImgName: 'sprite@2x.png',
-      retinaImgPath: 'img/sprite@2x.png',
       imgName: 'sprite.png',
-      imgPath: 'img/sprite.png',
+      retinaImgName: 'sprite@2x.png',
+      retinaSrcFilter: '**/*@2x.png',
       cssName: '_sprite.scss',
-      cssTemplate: 'gulp/templates/sprite-template.scss',
-      padding: 1,
+      cssTemplate: 'gulp/templates/sprite.scss',
     },
   },
 

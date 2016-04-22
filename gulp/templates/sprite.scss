@@ -1,6 +1,6 @@
 .icon {
   display: inline-block;
-  background-image: url('{{{spritesheet.escaped_image}}}');
+  background-image: url("{{{spritesheet.escaped_image}}}");
   background-repeat: no-repeat;
   background-size: {{spritesheet.px.width}} {{spritesheet.px.height}};
 
@@ -9,7 +9,7 @@
          screen and (-o-min-device-pixel-ratio: 100/100),
          screen and (min-device-pixel-ratio: 1.0),
          screen and (min-resolution: 1.0dppx) {
-    background-image: url('{{{spritesheet.escaped_image}}}');
+    background-image: url("{{{spritesheet.escaped_image}}}");
   }
 
   @media screen and (-webkit-min-device-pixel-ratio: 2.0),
@@ -17,7 +17,7 @@
          screen and (-o-min-device-pixel-ratio: 200/100),
          screen and (min-device-pixel-ratio: 2.0),
          screen and (min-resolution: 2.0dppx) {
-    background-image: url('{{{retina_spritesheet.escaped_image}}}');
+    background-image: url("{{{retina_spritesheet.escaped_image}}}");
   }
 }
 
