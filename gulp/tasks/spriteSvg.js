@@ -15,7 +15,7 @@ const paths = {
 gulp.task('sprite:svg', () => (
   gulp.src(paths.src)
     .pipe($.if(!cfg.production, $.plumber(handleErrors)))
-    .pipe($.if(cfg.spriteSvg.optimize, $.imagemin(cfg.imagemin)))
+    .pipe($.if(cfg.spriteSvg.optimize, $.svgmin()))
     .pipe($.svgstore(cfg.spriteSvg.svgstore))
     .pipe($.svg2string())
     .pipe(gulp.dest(paths.dest))

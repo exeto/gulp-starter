@@ -82,8 +82,4 @@ module.exports = {
     ],
     'feature-detects': [],
   },
-
-  imagemin: {
-    progressive: true,
-  },
 };
