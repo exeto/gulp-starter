@@ -10,6 +10,7 @@ const cfg = require('config');
 const wpcfg = require('../../webpack/config.dev');
 
 const compiler = webpack(wpcfg);
+let launched = false;
 
 gulp.task('dev-server', cb => {
   const bsConfig = {
@@ -42,8 +43,9 @@ gulp.task('dev-server', cb => {
       message: stats.toJson().errors[0],
     });
 
-    if (!bs.active) {
+    if (!launched) {
       bs.init(bsConfig, cb);
+      launched = true;
     }
   });
 });
