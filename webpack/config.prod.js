@@ -41,7 +41,7 @@ module.exports = merge({
   postcss: [
     require('postcss-flexbugs-fixes'),
     require('autoprefixer'),
-    require('postcss-csso'),
+    require('postcss-csso')({ comments: false }),
   ],
 
   plugins: [
