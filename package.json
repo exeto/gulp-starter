@@ -1,6 +1,7 @@
 {
   "name": "gulp-starter",
   "version": "0.3.0",
+  "private": true,
   "description": "Gulp starter",
   "license": "MIT",
   "repository": "exeto/gulp-starter",
