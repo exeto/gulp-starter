@@ -1,5 +1,7 @@
 # gulp-starter [![devDependency Status][dev-depstat-image]][dev-depstat-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/exeto/gulp-starter.svg)](https://greenkeeper.io/)
+
 > Gulp starter.
 
 ## Features
