@@ -2,6 +2,8 @@
 
 > Gulp starter.
 
+**THIS REPOSITORY IS NO LONGER MAINTAINED**
+
 ## Features
 
 - CSS ([Sass](http://sass-lang.com/), [PostCSS](https://github.com/postcss/postcss))
